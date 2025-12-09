@@ -80,6 +80,11 @@
             padding: 0 3rem;
             margin-top: 80px;
             text-align: center;
+            background: 
+                linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8f9fa" width="1200" height="800"/><g fill="%232874a6" opacity="0.05"><circle cx="200" cy="200" r="100"/><circle cx="1000" cy="600" r="150"/><circle cx="600" cy="100" r="80"/><circle cx="900" cy="300" r="120"/><circle cx="300" cy="700" r="90"/><rect x="100" y="500" width="150" height="150" rx="10"/><rect x="800" y="100" width="100" height="100" rx="10"/></g></svg>');
+            background-size: cover;
+            background-position: center;
         }
         
         .hero-content {
@@ -169,10 +174,19 @@
         
         .profile-img {
             width: 100%;
-            height: 350px;
+            height: 400px;
             object-fit: cover;
-            object-position: center top;
-            border-radius: 3px;
+            object-position: center center;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border: 3px solid #2874a6;
+            transition: all 0.4s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(40, 116, 166, 0.3);
+            border-color: #1f618d;
         }
         
         .about-text h3 {
@@ -191,17 +205,43 @@
         .info-list {
             list-style: none;
             margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
         
         .info-list li {
             margin-bottom: 0.8rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #2874a6;
+            transition: all 0.3s ease;
+            cursor: default;
+            text-align: center;
+        }
+        
+        .info-list li:hover {
+            transform: translateX(5px);
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 3px solid #1f618d;
         }
         
         .info-list strong {
             color: #000;
             font-weight: 600;
-            display: inline-block;
-            width: 120px;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #2874a6;
+        }
+        
+        .info-list span {
+            color: #5a5a5a;
+            font-size: 0.95rem;
         }
         
         /* Content Cards */
@@ -215,13 +255,16 @@
         .content-card {
             background: #f8f9fa;
             padding: 3rem;
-            border-radius: 3px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
             transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         
         .content-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
             transform: translateY(-5px);
+            border-color: #2874a6;
         }
         
         .content-card h3 {
@@ -285,6 +328,10 @@
             font-size: 2.5rem;
             margin-bottom: 3rem;
             font-weight: 700;
+            background: linear-gradient(135deg, #2874a6 0%, #1f618d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .contact-info {
@@ -334,7 +381,54 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive */
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+        
+        .section-header {
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .about-content {
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+        
+        .content-card {
+            animation: fadeInUp 0.6s ease backwards;
+        }
+        
+        .content-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .content-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .content-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -416,17 +510,17 @@
                 </p>
                 
                 <ul class="info-list">
-                    <li><strong>Fullname:</strong> Ansh Soni</li>
-                    <li><strong>Interests:</strong> AI, ML, Generative AI, Agentic AI, NLP</li>
-                    <li><strong>Email:</strong> soni.ansh@northeastern.edu</li>
-                    <li><strong>Location:</strong> Boston, MA</li>
+                    <li><strong>Fullname</strong><span>Ansh Soni</span></li>
+                    <li><strong>Interests</strong><span>AI, ML, Generative AI, Agentic AI, NLP</span></li>
+                    <li><strong>Email</strong><span>soni.ansh@northeastern.edu</span></li>
+                    <li><strong>Location</strong><span>Boston, MA</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Resume -->
-    <section id="resume">
+    <section id="resume" style="background: #f8f9fa; padding: 5rem 3rem;">
         <div class="section-header">
             <h5>Resume</h5>
             <h1>My Resume can be downloaded here.</h1>
@@ -438,7 +532,7 @@
     </section>
 
     <!-- Modules -->
-    <section id="modules" style="background: #f8f9fa;">
+    <section id="modules" style="padding: 8rem 3rem;">
         <div class="section-header">
             <h5>Co-op Preparation</h5>
             <h1>My Co-op Portfolio Modules.</h1>
@@ -482,8 +576,7 @@
             <h5>Contact</h5>
             <h1>I'd Love To Hear From You.</h1>
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:soni.ansh@northeastern.edu">soni.ansh@northeastern.edu</a></p>
-                <p><strong>Email:</strong> <a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a>, <a href="mailto:soni.ansh@northeastern.edu">soni.ansh@northeastern.edu</a></p>
                 <p><strong>Phone:</strong> <a href="tel:+18572509717">+1 (857) 250-9717</a></p>
                 <p><strong>Location:</strong> Boston, MA, USA</p>
             </div>
@@ -498,4 +591,3 @@
     </footer>
 </body>
 </html>
-

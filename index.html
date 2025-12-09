@@ -21,6 +21,7 @@
             line-height: 1.8;
             color: #5a5a5a;
             background: #ffffff;
+            font-size: 16px;
         }
         
         /* Navigation */
@@ -67,7 +68,7 @@
         }
         
         .nav-links a:hover {
-            color: #3498db;
+            color: #2874a6;
         }
         
         /* Hero */
@@ -75,44 +76,51 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             padding: 0 3rem;
             margin-top: 80px;
+            text-align: center;
         }
         
         .hero-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             width: 100%;
         }
         
         .hero h5 {
-            font-size: 1rem;
-            color: #3498db;
+            font-size: 1.1rem;
+            color: #2874a6;
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
         
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 5rem;
             color: #000;
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             line-height: 1.2;
         }
         
         .hero-rotating {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #5a5a5a;
             margin-bottom: 3rem;
-            font-weight: 400;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .hero-rotating p {
+            margin: 0;
         }
         
         .hero-btn {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: #3498db;
+            background: #2874a6;
             color: #fff;
             text-decoration: none;
             font-weight: 500;
@@ -121,7 +129,7 @@
         }
         
         .hero-btn:hover {
-            background: #2980b9;
+            background: #1f618d;
         }
         
         /* Section */
@@ -136,7 +144,7 @@
         
         .section-header h5 {
             font-size: 1rem;
-            color: #3498db;
+            color: #2874a6;
             font-weight: 500;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
@@ -151,30 +159,33 @@
         
         /* About */
         .about-content {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
+            grid-template-columns: 280px 1fr;
+            gap: 5rem;
+            align-items: start;
         }
         
         .profile-img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
+            object-position: center top;
             border-radius: 3px;
         }
         
         .about-text h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #000;
-            margin-bottom: 1rem;
+            margin: 2rem 0 1rem 0;
             font-weight: 600;
         }
         
         .about-text p {
             margin-bottom: 1.5rem;
-            line-height: 1.9;
+            line-height: 2;
+            font-size: 1.05rem;
         }
         
         .info-list {
@@ -228,7 +239,7 @@
         .btn {
             display: inline-block;
             padding: 0.8rem 2rem;
-            background: #3498db;
+            background: #2874a6;
             color: #fff;
             text-decoration: none;
             font-weight: 500;
@@ -238,7 +249,7 @@
         }
         
         .btn:hover {
-            background: #2980b9;
+            background: #1f618d;
         }
         
         .btn-secondary {
@@ -285,13 +296,19 @@
             color: #aaa;
         }
         
+        .contact-info strong {
+            color: #fff;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
         .contact-info a {
             color: #fff;
             text-decoration: none;
         }
         
         .contact-info a:hover {
-            color: #3498db;
+            color: #2874a6;
         }
         
         .social-links {
@@ -306,7 +323,7 @@
         }
         
         .social-links a:hover {
-            color: #3498db;
+            color: #2874a6;
         }
         
         .footer-bottom {
@@ -362,11 +379,7 @@
             <h5>Hello, World.</h5>
             <h1>I'm Ansh Soni.</h1>
             <div class="hero-rotating">
-                <p>Data Science<br>
-                Machine Learning<br>
-                Generative AI<br>
-                Agentic AI<br>
-                NLP</p>
+                Data Science • Machine Learning • Generative AI • Agentic AI • NLP
             </div>
             <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #5a5a5a;">Master's Student in Computer Science, Northeastern University</p>
             <a href="#about" class="hero-btn">More About Me</a>
@@ -413,7 +426,7 @@
     </section>
 
     <!-- Resume -->
-    <section id="resume" style="background: #f8f9fa;">
+    <section id="resume">
         <div class="section-header">
             <h5>Resume</h5>
             <h1>My Resume can be downloaded here.</h1>
@@ -425,7 +438,7 @@
     </section>
 
     <!-- Modules -->
-    <section id="modules">
+    <section id="modules" style="background: #f8f9fa;">
         <div class="section-header">
             <h5>Co-op Preparation</h5>
             <h1>My Co-op Portfolio Modules.</h1>
@@ -433,7 +446,7 @@
         <div class="content-grid">
             <!-- Module 4 -->
             <div class="content-card">
-                <h3>Module 04: Professional Introduction</h3>
+                <h3>Professional Introduction</h3>
                 <p>
                     This is my professional introduction where I summarize my experience, 
                     technical skills, and career goals in AI and Machine Learning.
@@ -443,7 +456,7 @@
             
             <!-- Module 8 -->
             <div class="content-card">
-                <h3>Module 08: Tell Me About Yourself</h3>
+                <h3>Tell Me About Yourself</h3>
                 <p>
                     This video provides an overview of my background, projects, and skills in AI and ML.
                 </p>
@@ -452,7 +465,7 @@
             
             <!-- Module 9 -->
             <div class="content-card">
-                <h3>Module 09: Job Search Strategy Plan</h3>
+                <h3>Job Search Strategy Plan</h3>
                 <p>
                     This document outlines my career goals, top skills, target companies, 
                     networking plan, and to-do list to achieve my career objectives.
@@ -469,10 +482,10 @@
             <h5>Contact</h5>
             <h1>I'd Love To Hear From You.</h1>
             <div class="contact-info">
-                <p><a href="mailto:soni.ansh@northeastern.edu">soni.ansh@northeastern.edu</a></p>
-                <p><a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a></p>
-                <p><a href="tel:+18572509717">+1 (857) 250-9717</a></p>
-                <p>Boston, MA, USA</p>
+                <p><strong>Email:</strong> <a href="mailto:soni.ansh@northeastern.edu">soni.ansh@northeastern.edu</a></p>
+                <p><strong>Email:</strong> <a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+18572509717">+1 (857) 250-9717</a></p>
+                <p><strong>Location:</strong> Boston, MA, USA</p>
             </div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/ansh-soni-8683512a4" target="_blank">LinkedIn</a>

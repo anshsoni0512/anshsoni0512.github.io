@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh Soni - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: #5a5a5a;
+            background: #ffffff;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #5a5a5a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 3rem;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .hero h5 {
+            font-size: 1rem;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+        
+        .hero-rotating {
+            font-size: 1.5rem;
+            color: #5a5a5a;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .hero-btn:hover {
+            background: #2980b9;
+        }
+        
+        /* Section */
+        section {
+            padding: 8rem 3rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-header h5 {
+            font-size: 1rem;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .section-header h1 {
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: 700;
+        }
+        
+        /* About */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .info-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .info-list li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .info-list strong {
+            color: #000;
+            font-weight: 600;
+            display: inline-block;
+            width: 120px;
+        }
+        
+        /* Content Cards */
+        .content-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .content-card {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .content-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .content-card h3 {
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .content-card p {
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 3px;
+            transition: all 0.3s;
+            margin-right: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn-secondary {
+            background: #000;
+        }
+        
+        .btn-secondary:hover {
+            background: #333;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 5rem 3rem 3rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-content h5 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .footer-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: #aaa;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: #3498db;
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 5rem 2rem;
+            }
+            
+            .nav-container {
+                padding: 0 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">Ansh Soni</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h5>Hello, World.</h5>
+            <h1>I'm Ansh Soni.</h1>
+            <div class="hero-rotating">
+                <p>Data Science<br>
+                Machine Learning<br>
+                Generative AI<br>
+                Agentic AI<br>
+                NLP</p>
+            </div>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #5a5a5a;">Master's Student in Computer Science, Northeastern University</p>
+            <a href="#about" class="hero-btn">More About Me</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="section-header">
+            <h5>About</h5>
+            <h1>Let me introduce myself.</h1>
+        </div>
+        <div class="about-content">
+            <div>
+                <img src="https://i.imgur.com/wyOCmF7.jpeg" alt="Ansh Soni" class="profile-img">
+            </div>
+            <div class="about-text">
+                <p>
+                    I am Ansh Soni, a Computer Science graduate student at Northeastern University. 
+                    I'm passionate about AI, Generative AI, Agentic AI, and Machine Learning, and I enjoy building 
+                    projects that combine technical innovation with practical impact.
+                </p>
+                <p>
+                    I have completed a 6-month internship as a Machine Learning Engineer, where I built Generative AI 
+                    applications and used AI to automate business processes, improving efficiency and workflow.
+                </p>
+                
+                <h3>Profile</h3>
+                <p>
+                    My primary interests lie in Data Science, Machine Learning, Natural Language Processing, 
+                    Generative AI, and Agentic AI. Please feel free to reach out if you believe I would be a good 
+                    fit for your needs. I am enthusiastic about contributing my skills and knowledge to meaningful 
+                    projects in these domains.
+                </p>
+                
+                <ul class="info-list">
+                    <li><strong>Fullname:</strong> Ansh Soni</li>
+                    <li><strong>Interests:</strong> AI, ML, Generative AI, Agentic AI, NLP</li>
+                    <li><strong>Email:</strong> soni.ansh@northeastern.edu</li>
+                    <li><strong>Location:</strong> Boston, MA</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" style="background: #f8f9fa;">
+        <div class="section-header">
+            <h5>Resume</h5>
+            <h1>My Resume can be downloaded here.</h1>
+        </div>
+        <div style="text-align: center;">
+            <a href="https://drive.google.com/file/d/1nieJ88q2vUc-Jtzo5vwjW18ppCHsuSRH/preview" class="btn" target="_blank">View Resume</a>
+            <a href="https://drive.google.com/uc?export=download&id=1nieJ88q2vUc-Jtzo5vwjW18ppCHsuSRH" class="btn btn-secondary">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules">
+        <div class="section-header">
+            <h5>Co-op Preparation</h5>
+            <h1>My Co-op Portfolio Modules.</h1>
+        </div>
+        <div class="content-grid">
+            <!-- Module 4 -->
+            <div class="content-card">
+                <h3>Module 04: Professional Introduction</h3>
+                <p>
+                    This is my professional introduction where I summarize my experience, 
+                    technical skills, and career goals in AI and Machine Learning.
+                </p>
+                <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=150763bd-e8b3-407e-839f-b38601870082" class="btn" target="_blank">Watch Video</a>
+            </div>
+            
+            <!-- Module 8 -->
+            <div class="content-card">
+                <h3>Module 08: Tell Me About Yourself</h3>
+                <p>
+                    This video provides an overview of my background, projects, and skills in AI and ML.
+                </p>
+                <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d53b355c-fcd1-4158-a94f-b38700096bfd" class="btn" target="_blank">Watch Video</a>
+            </div>
+            
+            <!-- Module 9 -->
+            <div class="content-card">
+                <h3>Module 09: Job Search Strategy Plan</h3>
+                <p>
+                    This document outlines my career goals, top skills, target companies, 
+                    networking plan, and to-do list to achieve my career objectives.
+                </p>
+                <a href="https://drive.google.com/file/d/1edVY4oi5j2So230nHqXl08F4-KzYdBoi/preview" class="btn" target="_blank">View Strategy</a>
+                <a href="https://drive.google.com/uc?export=download&id=1edVY4oi5j2So230nHqXl08F4-KzYdBoi" class="btn btn-secondary">Download PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h5>Contact</h5>
+            <h1>I'd Love To Hear From You.</h1>
+            <div class="contact-info">
+                <p><a href="mailto:soni.ansh@northeastern.edu">soni.ansh@northeastern.edu</a></p>
+                <p><a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a></p>
+                <p><a href="tel:+18572509717">+1 (857) 250-9717</a></p>
+                <p>Boston, MA, USA</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ansh-soni-8683512a4" target="_blank">LinkedIn</a>
+                <a href="https://github.com/anshsoni0512" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Ansh Soni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

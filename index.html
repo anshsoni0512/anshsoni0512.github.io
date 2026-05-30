@@ -1,593 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ansh Soni - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.8;
-            color: #5a5a5a;
-            background: #ffffff;
-            font-size: 16px;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 1000;
-            padding: 1.5rem 0;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #000;
-            text-decoration: none;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #5a5a5a;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #2874a6;
-        }
-        
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 3rem;
-            margin-top: 80px;
-            text-align: center;
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8f9fa" width="1200" height="800"/><g fill="%232874a6" opacity="0.05"><circle cx="200" cy="200" r="100"/><circle cx="1000" cy="600" r="150"/><circle cx="600" cy="100" r="80"/><circle cx="900" cy="300" r="120"/><circle cx="300" cy="700" r="90"/><rect x="100" y="500" width="150" height="150" rx="10"/><rect x="800" y="100" width="100" height="100" rx="10"/></g></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        
-        .hero h5 {
-            font-size: 1.1rem;
-            color: #2874a6;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .hero h1 {
-            font-size: 5rem;
-            color: #000;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero-rotating {
-            font-size: 1.3rem;
-            color: #5a5a5a;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-        
-        .hero-rotating p {
-            margin: 0;
-        }
-        
-        .hero-btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: #2874a6;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 3px;
-            transition: all 0.3s;
-        }
-        
-        .hero-btn:hover {
-            background: #1f618d;
-        }
-        
-        /* Section */
-        section {
-            padding: 8rem 3rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-        
-        .section-header h5 {
-            font-size: 1rem;
-            color: #2874a6;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .section-header h1 {
-            font-size: 2.5rem;
-            color: #000;
-            font-weight: 700;
-        }
-        
-        /* About */
-        .about-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-        
-        .profile-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            object-position: center center;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            border: 3px solid #2874a6;
-            transition: all 0.4s ease;
-        }
-        
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(40, 116, 166, 0.3);
-            border-color: #1f618d;
-        }
-        
-        .about-text h3 {
-            font-size: 1.5rem;
-            color: #000;
-            margin: 2rem 0 1rem 0;
-            font-weight: 600;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            line-height: 2;
-            font-size: 1.05rem;
-        }
-        
-        .info-list {
-            list-style: none;
-            margin: 2rem 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .info-list li {
-            margin-bottom: 0.8rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border-left: 3px solid #2874a6;
-            transition: all 0.3s ease;
-            cursor: default;
-            text-align: center;
-        }
-        
-        .info-list li:hover {
-            transform: translateX(5px);
-            background: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-left: 3px solid #1f618d;
-        }
-        
-        .info-list strong {
-            color: #000;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 0.3rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #2874a6;
-        }
-        
-        .info-list span {
-            color: #5a5a5a;
-            font-size: 0.95rem;
-        }
-        
-        /* Content Cards */
-        .content-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .content-card {
-            background: #f8f9fa;
-            padding: 3rem;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        
-        .content-card:hover {
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            transform: translateY(-5px);
-            border-color: #2874a6;
-        }
-        
-        .content-card h3 {
-            font-size: 1.5rem;
-            color: #000;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .content-card p {
-            margin-bottom: 2rem;
-            line-height: 1.9;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: #2874a6;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 3px;
-            transition: all 0.3s;
-            margin-right: 1rem;
-        }
-        
-        .btn:hover {
-            background: #1f618d;
-        }
-        
-        .btn-secondary {
-            background: #000;
-        }
-        
-        .btn-secondary:hover {
-            background: #333;
-        }
-        
-        /* Footer */
-        footer {
-            background: #000;
-            color: #fff;
-            padding: 5rem 3rem 3rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-content h5 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .footer-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2874a6 0%, #1f618d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .contact-info {
-            margin: 2rem 0;
-        }
-        
-        .contact-info p {
-            margin-bottom: 0.5rem;
-            color: #aaa;
-        }
-        
-        .contact-info strong {
-            color: #fff;
-            font-weight: 600;
-            margin-right: 0.5rem;
-        }
-        
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            color: #2874a6;
-        }
-        
-        .social-links {
-            margin-top: 2rem;
-        }
-        
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .social-links a:hover {
-            color: #2874a6;
-        }
-        
-        .footer-bottom {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        .hero-content {
-            animation: fadeInUp 1s ease;
-        }
-        
-        .section-header {
-            animation: fadeIn 0.8s ease;
-        }
-        
-        .about-content {
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-        
-        .content-card {
-            animation: fadeInUp 0.6s ease backwards;
-        }
-        
-        .content-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        
-        .content-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .content-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            section {
-                padding: 5rem 2rem;
-            }
-            
-            .nav-container {
-                padding: 0 2rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ansh Soni — ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --blue:#1A56DB;--blue-light:#EBF0FD;--blue-border:#BFCDFA;
+  --green:#059669;--green-light:#ECFDF5;--green-border:#A7F3D0;
+  --bg:#F7F9FC;--white:#FFFFFF;
+  --text:#0F172A;--text2:#475569;--text3:#64748B;--text4:#94A3B8;
+  --border:#E8EDF3;--footer:#0F172A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:var(--text);background:var(--white);}
+a{text-decoration:none;color:inherit;}
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid transparent;transition:border-color .3s;}
+nav.scrolled{border-color:var(--border);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Fira Code',monospace;font-size:18px;font-weight:700;color:var(--blue);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text2);position:relative;padding-bottom:2px;transition:color .2s;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--blue);transition:width .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s;}
+.mobile-menu{display:none;flex-direction:column;background:var(--white);border-bottom:1px solid var(--border);padding:16px 32px;gap:16px;}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--text2);}
+.mobile-menu.open{display:flex;}
+/* SECTIONS */
+section{padding:80px 0;}
+.container{max-width:1100px;margin:0 auto;padding:0 32px;}
+.sec-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px;font-family:'Fira Code',monospace;}
+.sec-title{font-size:32px;font-weight:800;color:var(--text);margin-bottom:40px;line-height:1.2;}
+/* HERO */
+#home{background:var(--white);padding:90px 0 80px;}
+.hero-grid{display:grid;grid-template-columns:60fr 40fr;gap:48px;align-items:center;}
+.hero-badge{display:inline-block;font-family:'Fira Code',monospace;font-size:12px;font-weight:500;color:var(--blue);background:var(--blue-light);border-radius:20px;padding:5px 16px;margin-bottom:20px;}
+.hero-name{font-size:58px;font-weight:800;line-height:1.1;margin-bottom:12px;}
+.hero-name span{color:var(--blue);}
+.hero-sub{font-size:18px;color:var(--text3);margin-bottom:14px;}
+.hero-typing{font-family:'Fira Code',monospace;font-size:15px;color:var(--text2);min-height:24px;margin-bottom:16px;}
+.hero-typing .cursor{display:inline-block;width:2px;height:1em;background:var(--blue);margin-left:2px;animation:blink 1s infinite;vertical-align:middle;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.hero-bio{font-size:15px;color:var(--text3);margin-bottom:20px;max-width:480px;}
+.pills-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.pill{font-size:12px;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);border-radius:20px;padding:4px 14px;font-weight:500;}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--blue);color:#fff;font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;border:none;cursor:pointer;transition:opacity .2s;}
+.btn-primary:hover{opacity:.88;}
+.btn-outline{background:var(--white);color:var(--blue);font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;border:1.5px solid var(--blue);cursor:pointer;transition:background .2s;}
+.btn-outline:hover{background:var(--blue-light);}
+.hero-right{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:4px solid var(--blue);outline:8px solid var(--blue-light);}
+.hero-stats{display:flex;gap:10px;}
+.stat-pill{font-size:12px;font-weight:600;color:var(--text2);background:#F1F5F9;border-radius:20px;padding:5px 14px;}
+/* ABOUT */
+#about{background:var(--bg);}
+.about-grid{display:grid;grid-template-columns:55fr 45fr;gap:48px;align-items:start;}
+.about-heading{font-size:26px;font-weight:800;color:var(--text);margin-bottom:20px;}
+.about-text p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.about-text .hl{color:var(--blue);font-weight:700;}
+.profile-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.profile-card h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;}
+.profile-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);gap:16px;}
+.profile-row:last-child{border-bottom:none;}
+.profile-row .key{font-size:13px;color:var(--text4);flex-shrink:0;}
+.profile-row .val{font-size:13px;color:var(--text);text-align:right;}
+.profile-row .val a{color:var(--blue);}
+/* SKILLS */
+#skills{background:var(--white);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.skill-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 12px 12px;padding:20px;transition:box-shadow .2s;}
+.skill-card:hover{box-shadow:0 4px 16px rgba(26,86,219,.08);}
+.skill-card h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;}
+.tag-wrap{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-size:11px;color:var(--text2);background:#F1F5F9;border-radius:5px;padding:3px 10px;font-weight:500;}
+/* EXPERIENCE */
+#experience{background:var(--bg);}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--border);border-radius:2px;}
+.tl-dot{position:absolute;left:-6px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid var(--white);box-shadow:0 0 0 2px var(--blue);}
+.exp-card{position:relative;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:28px;}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;flex-wrap:wrap;gap:12px;}
+.exp-title{font-size:17px;font-weight:700;color:var(--text);}
+.exp-date{font-size:12px;color:var(--text3);background:#F1F5F9;padding:4px 12px;border-radius:20px;}
+.exp-company{font-size:14px;font-weight:600;color:var(--blue);margin-bottom:18px;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.exp-bullets li{font-size:14px;color:#334155;display:flex;gap:10px;align-items:flex-start;line-height:1.6;}
+.exp-bullets li::before{content:"▸";color:var(--blue);flex-shrink:0;margin-top:3px;font-size:11px;}
+.exp-bullets li b{color:var(--blue);font-weight:700;}
+.tech-pills{display:flex;flex-wrap:wrap;gap:6px;}
+.tech-pill{font-size:11px;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);border-radius:5px;padding:3px 10px;}
+/* PROJECTS */
+#projects{background:var(--white);}
+.proj-list{display:flex;flex-direction:column;gap:20px;}
+.proj-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 32px;display:flex;gap:24px;align-items:flex-start;transition:border-color .2s;}
+.proj-card:hover{border-color:var(--blue);}
+.proj-left{flex:1;min-width:0;}
+.proj-num-label{font-family:'Fira Code',monospace;font-size:12px;color:var(--text4);margin-bottom:8px;}
+.proj-title{font-size:18px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:12px;}
+.proj-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;}
+.proj-bullets{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.proj-bullets li{font-size:13px;color:#334155;display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
+.proj-bullets li::before{content:"▸";color:var(--blue);flex-shrink:0;margin-top:2px;font-size:10px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.proj-metrics{display:flex;flex-wrap:wrap;gap:8px;}
+.metric{font-size:12px;font-weight:700;color:var(--green);background:var(--green-light);border:1px solid var(--green-border);border-radius:20px;padding:4px 12px;}
+.proj-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0;}
+.proj-big-num{font-family:'Fira Code',monospace;font-size:72px;font-weight:900;color:var(--blue-light);line-height:1;user-select:none;}
+.gh-btn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);border-radius:8px;padding:8px 16px;cursor:pointer;transition:background .2s;}
+.gh-btn:hover{background:#dce8fc;}
+.gh-btn svg{width:15px;height:15px;fill:var(--blue);}
+/* EDUCATION */
+#education{background:var(--bg);}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.edu-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 12px 12px;padding:24px;}
+.edu-univ{font-size:17px;font-weight:800;color:var(--text);margin-bottom:4px;}
+.edu-degree{font-size:14px;font-weight:600;color:var(--blue);margin-bottom:12px;}
+.edu-meta{display:flex;flex-direction:column;gap:4px;margin-bottom:16px;}
+.edu-meta span{font-size:13px;color:var(--text3);}
+.edu-meta strong{color:var(--text);font-weight:600;}
+.cw-label{font-size:12px;font-weight:700;color:var(--text4);margin-bottom:8px;letter-spacing:.5px;}
+/* CONTACT */
+#contact{background:var(--white);}
+.contact-inner{max-width:600px;margin:0 auto;text-align:center;}
+.contact-sub{font-size:15px;color:var(--text3);line-height:1.7;margin-bottom:32px;}
+.btn-contact{display:inline-block;background:var(--blue);color:#fff;font-size:15px;font-weight:600;padding:14px 36px;border-radius:10px;margin-bottom:32px;transition:opacity .2s;}
+.btn-contact:hover{opacity:.88;}
+.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
+.contact-link{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 18px;transition:color .2s,border-color .2s;}
+.contact-link:hover{color:var(--blue);border-color:var(--blue-border);}
+.contact-link svg{width:16px;height:16px;flex-shrink:0;}
+/* FOOTER */
+footer{background:var(--footer);padding:22px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+.footer-text{font-size:13px;color:var(--text4);}
+.footer-icons{display:flex;gap:10px;}
+.footer-icon{width:32px;height:32px;background:#1E293B;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background .2s;cursor:pointer;}
+.footer-icon:hover{background:#2D3F5A;}
+.footer-icon svg{width:15px;height:15px;fill:#94A3B8;transition:fill .2s;}
+.footer-icon:hover svg{fill:#fff;}
+/* FADE IN */
+.fade{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.fade.visible{opacity:1;transform:translateY(0);}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-grid,.about-grid,.edu-grid{grid-template-columns:1fr;}
+  .hero-name{font-size:38px;}
+  .hero-right{margin-top:32px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .proj-card{flex-direction:column;}
+  .proj-right{flex-direction:row;align-items:center;}
+  .proj-big-num{font-size:48px;}
+  section{padding:60px 0;}
+  .sec-title{font-size:26px;}
+  .container{padding:0 20px;}
+}
+@media(max-width:480px){
+  .hero-name{font-size:32px;}
+  .edu-grid{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#home" class="logo">Ansh Soni</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#modules">Modules</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h5>Hello, World.</h5>
-            <h1>I'm Ansh Soni.</h1>
-            <div class="hero-rotating">
-                Data Science • Machine Learning • Generative AI • Agentic AI • NLP
-            </div>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #5a5a5a;">Master's Student in Computer Science, Northeastern University</p>
-            <a href="#about" class="hero-btn">More About Me</a>
-        </div>
-    </section>
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">&lt;AS/&gt;</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <!-- About -->
-    <section id="about">
-        <div class="section-header">
-            <h5>About</h5>
-            <h1>Let me introduce myself.</h1>
+<!-- HERO -->
+<section id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left fade">
+        <div class="hero-badge">ML Engineer &middot; Boston, MA</div>
+        <h1 class="hero-name">Hi, I'm <span>Ansh Soni.</span></h1>
+        <p class="hero-sub">MS Computer Science @ Northeastern University</p>
+        <div class="hero-typing"><span id="typed"></span><span class="cursor"></span></div>
+        <p class="hero-bio">I'm passionate about Generative AI, Agentic AI, and Machine Learning. Currently seeking full-time ML Engineering or SWE roles in the US.</p>
+        <div class="pills-row">
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Generative AI</span>
+          <span class="pill">Agentic AI</span>
+          <span class="pill">NLP</span>
+          <span class="pill">MLOps</span>
         </div>
-        <div class="about-content">
-            <div>
-                <img src="https://i.imgur.com/wyOCmF7.jpeg" alt="Ansh Soni" class="profile-img">
-            </div>
-            <div class="about-text">
-                <p>
-                    I am Ansh Soni, a Computer Science graduate student at Northeastern University. 
-                    I'm passionate about AI, Generative AI, Agentic AI, and Machine Learning, and I enjoy building 
-                    projects that combine technical innovation with practical impact.
-                </p>
-                <p>
-                    I have completed a 6-month internship as a Machine Learning Engineer, where I built Generative AI 
-                    applications and used AI to automate business processes, improving efficiency and workflow.
-                </p>
-                
-                <h3>Profile</h3>
-                <p>
-                    My primary interests lie in Data Science, Machine Learning, Natural Language Processing, 
-                    Generative AI, and Agentic AI. Please feel free to reach out if you believe I would be a good 
-                    fit for your needs. I am enthusiastic about contributing my skills and knowledge to meaningful 
-                    projects in these domains.
-                </p>
-                
-                <ul class="info-list">
-                    <li><strong>Fullname</strong><span>Ansh Soni</span></li>
-                    <li><strong>Interests</strong><span>AI, ML, Generative AI, Agentic AI, NLP</span></li>
-                    <li><strong>Email</strong><span>soni.ansh@northeastern.edu</span></li>
-                    <li><strong>Location</strong><span>Boston, MA</span></li>
-                </ul>
-            </div>
+        <div class="btn-row">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="https://drive.google.com/uc?export=download&id=1nieJ88q2vUc-Jtzo5vwjW18ppCHsuSRH" class="btn-outline" target="_blank">Download Resume</a>
         </div>
-    </section>
+      </div>
+      <div class="hero-right fade">
+        <img src="https://i.imgur.com/wyOCmF7.jpeg" alt="Ansh Soni" class="hero-photo"/>
+        <div class="hero-stats">
+          <span class="stat-pill">GPA 3.83</span>
+          <span class="stat-pill">Northeastern '27</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Resume -->
-    <section id="resume" style="background: #f8f9fa; padding: 5rem 3rem;">
-        <div class="section-header">
-            <h5>Resume</h5>
-            <h1>My Resume can be downloaded here.</h1>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade">
+        <div class="sec-label">01. About</div>
+        <h2 class="about-heading">Let me introduce myself.</h2>
+        <p>I am Ansh Soni, a Computer Science graduate student at Northeastern University. I'm passionate about <span class="hl">AI</span>, <span class="hl">Generative AI</span>, <span class="hl">Agentic AI</span>, and <span class="hl">Machine Learning</span>, and I enjoy building projects that combine technical innovation with practical impact.</p>
+        <p>I have completed a 6-month internship as a <span class="hl">Machine Learning</span> Engineer, where I built <span class="hl">Generative AI</span> applications and used AI to automate business processes, improving efficiency and workflow.</p>
+        <p>My primary interests lie in Data Science, <span class="hl">Machine Learning</span>, Natural Language Processing, <span class="hl">Generative AI</span>, and <span class="hl">Agentic AI</span>. Please feel free to reach out if you believe I would be a good fit for your needs. I am enthusiastic about contributing my skills and knowledge to meaningful projects in these domains.</p>
+      </div>
+      <div class="fade">
+        <div class="profile-card">
+          <h3>Profile</h3>
+          <div class="profile-row"><span class="key">Full Name</span><span class="val">Ansh Soni</span></div>
+          <div class="profile-row"><span class="key">Interests</span><span class="val">AI, ML, Generative AI, Agentic AI, NLP</span></div>
+          <div class="profile-row"><span class="key">Email</span><span class="val"><a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a></span></div>
+          <div class="profile-row"><span class="key">Location</span><span class="val">Boston, MA, USA</span></div>
+          <div class="profile-row"><span class="key">University</span><span class="val">Northeastern University</span></div>
+          <div class="profile-row"><span class="key">Degree</span><span class="val">MS Computer Science</span></div>
         </div>
-        <div style="text-align: center;">
-            <a href="https://drive.google.com/file/d/1nieJ88q2vUc-Jtzo5vwjW18ppCHsuSRH/preview" class="btn" target="_blank">View Resume</a>
-            <a href="https://drive.google.com/uc?export=download&id=1nieJ88q2vUc-Jtzo5vwjW18ppCHsuSRH" class="btn btn-secondary">Download Resume</a>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Modules -->
-    <section id="modules" style="padding: 8rem 3rem;">
-        <div class="section-header">
-            <h5>Co-op Preparation</h5>
-            <h1>My Co-op Portfolio Modules.</h1>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="fade">
+      <div class="sec-label">02. Skills</div>
+      <h2 class="sec-title">Technical Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade">
+        <h4>Generative AI &amp; NLP</h4>
+        <div class="tag-wrap">
+          <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LangSmith</span><span class="tag">RAG</span><span class="tag">LLMs</span><span class="tag">QLoRA</span><span class="tag">Transformers</span><span class="tag">Prompt Engineering</span><span class="tag">spaCy</span>
         </div>
-        <div class="content-grid">
-            <!-- Module 4 -->
-            <div class="content-card">
-                <h3>Professional Introduction</h3>
-                <p>
-                    This is my professional introduction where I summarize my experience, 
-                    technical skills, and career goals in AI and Machine Learning.
-                </p>
-                <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=150763bd-e8b3-407e-839f-b38601870082" class="btn" target="_blank">Watch Video</a>
-            </div>
-            
-            <!-- Module 8 -->
-            <div class="content-card">
-                <h3>Tell Me About Yourself</h3>
-                <p>
-                    This video provides an overview of my background, projects, and skills in AI and ML.
-                </p>
-                <a href="https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d53b355c-fcd1-4158-a94f-b38700096bfd" class="btn" target="_blank">Watch Video</a>
-            </div>
-            
-            <!-- Module 9 -->
-            <div class="content-card">
-                <h3>Job Search Strategy Plan</h3>
-                <p>
-                    This document outlines my career goals, top skills, target companies, 
-                    networking plan, and to-do list to achieve my career objectives.
-                </p>
-                <a href="https://drive.google.com/file/d/1edVY4oi5j2So230nHqXl08F4-KzYdBoi/preview" class="btn" target="_blank">View Strategy</a>
-                <a href="https://drive.google.com/uc?export=download&id=1edVY4oi5j2So230nHqXl08F4-KzYdBoi" class="btn btn-secondary">Download PDF</a>
-            </div>
+      </div>
+      <div class="skill-card fade">
+        <h4>ML &amp; Deep Learning</h4>
+        <div class="tag-wrap">
+          <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">scikit-learn</span><span class="tag">OpenCV</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
         </div>
-    </section>
+      </div>
+      <div class="skill-card fade">
+        <h4>Languages</h4>
+        <div class="tag-wrap">
+          <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-card fade">
+        <h4>Databases &amp; Retrieval</h4>
+        <div class="tag-wrap">
+          <span class="tag">Pinecone</span><span class="tag">ChromaDB</span><span class="tag">FAISS</span><span class="tag">Vector Databases</span><span class="tag">Embedding Retrieval</span>
+        </div>
+      </div>
+      <div class="skill-card fade">
+        <h4>Tools &amp; Infrastructure</h4>
+        <div class="tag-wrap">
+          <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">FastAPI</span><span class="tag">Git</span><span class="tag">Streamlit</span><span class="tag">OpenAI GPT</span><span class="tag">Llama</span><span class="tag">W&amp;B</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact -->
-    <footer id="contact">
-        <div class="footer-content">
-            <h5>Contact</h5>
-            <h1>I'd Love To Hear From You.</h1>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:anshsoni0512@gmail.com">anshsoni0512@gmail.com</a>, <a href="mailto:soni.ansh@northeastern.edu">soni.ansh@northeastern.edu</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+18572509717">+1 (857) 250-9717</a></p>
-                <p><strong>Location:</strong> Boston, MA, USA</p>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ansh-soni-8683512a4" target="_blank">LinkedIn</a>
-                <a href="https://github.com/anshsoni0512" target="_blank">GitHub</a>
-            </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="fade">
+      <div class="sec-label">03. Experience</div>
+      <h2 class="sec-title">Work Experience</h2>
+    </div>
+    <div class="timeline fade">
+      <div class="tl-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Machine Learning Engineer Intern</div>
+            <div class="exp-company">Techspin Solutions</div>
+          </div>
+          <span class="exp-date">Jun 2024 &ndash; Dec 2024</span>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Ansh Soni. All rights reserved.</p>
+        <ul class="exp-bullets">
+          <li>Built LLM-powered Inventory Assistant using LangChain RAG on ERP data, improving planning efficiency by <b>40%</b></li>
+          <li>Automated chunk summarization within retrieval pipeline, reducing LLM token usage by <b>14%</b></li>
+          <li>Embedding-based semantic retrieval pipeline minimized stockouts by <b>15%</b> and saved <b>11 hours/week</b></li>
+          <li>Dispatch Delivery Automation with Tesseract OCR + spaCy NER achieving <b>93% accuracy</b>, saving <b>5 hours/week</b></li>
+          <li>Anomaly detection model with Streamlit dashboard and LLM-triggered alerts, increasing error detection by <b>32%</b></li>
+          <li>Streamlined cloud workflow using AWS Lambda integrating ERP, inventory, and anomaly detection data</li>
+        </ul>
+        <div class="tech-pills">
+          <span class="tech-pill">LangChain</span><span class="tech-pill">RAG</span><span class="tech-pill">spaCy</span><span class="tech-pill">Tesseract OCR</span><span class="tech-pill">Streamlit</span><span class="tech-pill">AWS Lambda</span><span class="tech-pill">scikit-learn</span>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="fade">
+      <div class="sec-label">04. Projects</div>
+      <h2 class="sec-title">Featured Projects</h2>
+    </div>
+    <div class="proj-list">
+
+      <div class="proj-card fade">
+        <div class="proj-left">
+          <div class="proj-num-label">01</div>
+          <div class="proj-title">Agentic AI Platform for Candidate Matching</div>
+          <p class="proj-desc">A multi-agent AI system that parses resumes, semantically matches candidates to job descriptions, and auto-generates personalized cover letters — with human-in-the-loop checkpoints for quality control and rapid prototyping via Claude Code.</p>
+          <ul class="proj-bullets">
+            <li>Built multi-agent LangGraph workflow with RAG-based job retrieval and MCP integration</li>
+            <li>Implemented LangSmith monitoring to track fit scores with structured outputs to Google Sheets</li>
+            <li>Used Claude Code for rapid prototyping with HITL checkpoints to reduce query errors</li>
+          </ul>
+          <div class="proj-tags">
+            <span class="tag">LangGraph</span><span class="tag">LangSmith</span><span class="tag">RAG</span><span class="tag">MCP</span><span class="tag">Claude Code</span><span class="tag">Python</span>
+          </div>
+          <div class="proj-metrics">
+            <span class="metric">+20% candidate-job relevance</span>
+            <span class="metric">&minus;12% query time</span>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-big-num">01</div>
+          <a href="https://github.com/anshsoni0512" target="_blank" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-card fade">
+        <div class="proj-left">
+          <div class="proj-num-label">02</div>
+          <div class="proj-title">Contract Risk Intelligence System</div>
+          <p class="proj-desc">A RAG pipeline that detects risky clauses in legal contracts using semantic chunking, multi-stage retrievers, and few-shot prompt engineering for context-aware, interpretable risk analysis at scale.</p>
+          <ul class="proj-bullets">
+            <li>Designed semantic chunking + multi-stage retrieval boosting precision by 21%</li>
+            <li>Engineered metadata-driven few-shot reasoning layer for interpretable clause classification</li>
+            <li>Batched LLM calls to reduce inference cost by 16%</li>
+          </ul>
+          <div class="proj-tags">
+            <span class="tag">LangChain</span><span class="tag">Llama</span><span class="tag">RAG</span><span class="tag">Vector DB</span><span class="tag">Prompt Engineering</span>
+          </div>
+          <div class="proj-metrics">
+            <span class="metric">F1 Score: 0.84</span>
+            <span class="metric">+21% retrieval precision</span>
+            <span class="metric">&minus;16% LLM cost</span>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-big-num">02</div>
+          <a href="https://github.com/anshsoni0512" target="_blank" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-card fade">
+        <div class="proj-left">
+          <div class="proj-num-label">03</div>
+          <div class="proj-title">Automated Kidney Diagnosis Workflow</div>
+          <p class="proj-desc">End-to-end ML pipeline for healthcare-focused kidney disease detection using a fine-tuned VGG16 CNN, with complete MLOps orchestration via MLflow and Docker, deployed on AWS EC2 for scalable cloud inference.</p>
+          <ul class="proj-bullets">
+            <li>Trained VGG16 with PyTorch achieving 91% validation accuracy through hyperparameter tuning</li>
+            <li>Orchestrated MLOps workflows with MLflow experiment tracking and Docker containerization</li>
+            <li>Deployed on AWS EC2 enabling reliable model monitoring and reducing deployment time by 24%</li>
+          </ul>
+          <div class="proj-tags">
+            <span class="tag">PyTorch</span><span class="tag">VGG16</span><span class="tag">MLflow</span><span class="tag">Docker</span><span class="tag">AWS EC2</span>
+          </div>
+          <div class="proj-metrics">
+            <span class="metric">91% validation accuracy</span>
+            <span class="metric">F1: 0.87</span>
+            <span class="metric">&minus;24% deploy time</span>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-big-num">03</div>
+          <a href="https://github.com/anshsoni0512" target="_blank" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-card fade">
+        <div class="proj-left">
+          <div class="proj-num-label">04</div>
+          <div class="proj-title">Multimodal Vision-Language Reasoner</div>
+          <p class="proj-desc">Fine-tuned a multimodal transformer LLM for image-text reasoning tasks using QLoRA and GPU sharding, with a complete MLOps monitoring system built on Weights &amp; Biases for experiment tracking and evaluation.</p>
+          <ul class="proj-bullets">
+            <li>Applied QLoRA + GPU sharding reducing training time by 25% with 29% higher throughput</li>
+            <li>Achieved 18% accuracy improvement through embedding alignment and evaluation strategies</li>
+            <li>Designed W&amp;B experiment tracking with loss curve analysis and dataset preprocessing pipeline</li>
+          </ul>
+          <div class="proj-tags">
+            <span class="tag">QLoRA</span><span class="tag">GPU Sharding</span><span class="tag">Transformers</span><span class="tag">Weights &amp; Biases</span><span class="tag">PyTorch</span>
+          </div>
+          <div class="proj-metrics">
+            <span class="metric">+18% accuracy</span>
+            <span class="metric">&minus;25% training time</span>
+            <span class="metric">+29% throughput</span>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-big-num">04</div>
+          <a href="https://github.com/anshsoni0512" target="_blank" class="gh-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="fade">
+      <div class="sec-label">05. Education</div>
+      <h2 class="sec-title">Academic Background</h2>
+    </div>
+    <div class="edu-grid fade">
+      <div class="edu-card">
+        <div class="edu-univ">Northeastern University</div>
+        <div class="edu-degree">MS Computer Science</div>
+        <div class="edu-meta">
+          <span><strong>GPA:</strong> 3.83 / 4.00</span>
+          <span><strong>Duration:</strong> Sep 2025 &ndash; May 2027</span>
+          <span><strong>Location:</strong> Boston, MA</span>
+        </div>
+        <div class="cw-label">COURSEWORK</div>
+        <div class="tag-wrap">
+          <span class="tag">Algorithms</span><span class="tag">NLP</span><span class="tag">Deep Learning</span><span class="tag">Programming Design Paradigm</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-univ">LJ University</div>
+        <div class="edu-degree">BE Computer Engineering</div>
+        <div class="edu-meta">
+          <span><strong>GPA:</strong> 8.49 / 10.00</span>
+          <span><strong>Duration:</strong> Sep 2021 &ndash; Jun 2025</span>
+          <span><strong>Location:</strong> Ahmedabad, India</span>
+        </div>
+        <div class="cw-label">COURSEWORK</div>
+        <div class="tag-wrap">
+          <span class="tag">Machine Learning</span><span class="tag">AI</span><span class="tag">DBMS</span><span class="tag">Full Stack Development</span><span class="tag">Statistics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner fade">
+      <div class="sec-label" style="text-align:center">06. Contact</div>
+      <h2 class="sec-title" style="text-align:center;margin-bottom:16px">Let's Connect</h2>
+      <p class="contact-sub">I'm actively looking for full-time ML Engineering and SWE roles in the US. Whether you have an opportunity, a question, or just want to say hi — my inbox is always open.</p>
+      <a href="mailto:anshsoni0512@gmail.com" class="btn-contact">Send an Email</a>
+      <div class="contact-links">
+        <a href="mailto:anshsoni0512@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          anshsoni0512@gmail.com
+        </a>
+        <a href="tel:+18572509717" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.72h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.34a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +1 (857) 250-9717
+        </a>
+        <a href="https://www.linkedin.com/in/ansh-soni-8683512a4" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          linkedin.com/in/ansh-soni
+        </a>
+        <a href="https://github.com/anshsoni0512" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          github.com/anshsoni0512
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-text">&copy; 2025 Ansh Soni &middot; Boston, MA</span>
+    <div class="footer-icons">
+      <a href="https://www.linkedin.com/in/ansh-soni-8683512a4" target="_blank" class="footer-icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/anshsoni0512" target="_blank" class="footer-icon" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="mailto:anshsoni0512@gmail.com" class="footer-icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);
+});
+// Hamburger
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.remove('open');
+}));
+// Typing animation
+const phrases=['I build LLM-powered applications.','I design RAG pipelines.','I ship end-to-end ML systems.'];
+let pi=0,ci=0,deleting=false;
+const el=document.getElementById('typed');
+function type(){
+  const phrase=phrases[pi];
+  if(!deleting){
+    el.textContent=phrase.substring(0,ci+1);
+    ci++;
+    if(ci===phrase.length){setTimeout(()=>{deleting=true;type();},2000);return;}
+  } else {
+    el.textContent=phrase.substring(0,ci-1);
+    ci--;
+    if(ci===0){deleting=false;pi=(pi+1)%phrases.length;}
+  }
+  setTimeout(type,deleting?50:80);
+}
+type();
+// Fade in
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.1});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+// Active nav
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)current=s.getAttribute('id');});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+});
+</script>
 </body>
 </html>
